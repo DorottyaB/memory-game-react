@@ -35,6 +35,7 @@ function App() {
     if (isOver) {
       if (!localStorage.getItem('score')) {
         localStorage.setItem('score', JSON.stringify(score));
+        setMessage('You clicked on an image twice!');
       } else {
         const prevScore = localStorage.getItem('score');
         if (score > prevScore) {
@@ -43,8 +44,8 @@ function App() {
         } else {
           setMessage('You clicked on an image twice!');
         }
-        setIsVisible(true);
       }
+      setIsVisible(true);
       setScore(0);
       setIsOver(false);
     }
